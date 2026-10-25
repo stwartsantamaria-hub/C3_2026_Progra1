@@ -14,21 +14,30 @@ RETIRO_MAXIMO = 100000.0   # Retiro máximo por operación
 OPCION_CONTINUAR = "s"     # Opción afirmativa para continuar
 
 # ------------------------------------------------------------------------------
-# 2. INICIALIZACIÓN DE VARIABLES
+# 2. INICIALIZACIÓN DE VARIABLES Y MUESTREO INICIAL
 # ------------------------------------------------------------------------------
 saldo = SALDO_INICIAL
 retiros_exitosos = 0
-continuar = "s"
 monto = 0.0
 
+# Mensaje de bienvenida con declaración explícita de límites
+print("==========================================")
+print("       BIENVENIDO AL CAJERO AUTOMÁTICO    ")
+print("==========================================")
+print("Saldo disponible inicial : ₡", saldo)
+print(f"Límites por transacción  : Mínimo ₡{RETIRO_MINIMO:,.0f} | Máximo ₡{RETIRO_MAXIMO:,.0f}")
+print("------------------------------------------")
+
+# Pregunta inicial para evaluar el ingreso al ciclo (Permite 0 iteraciones)
+continuar = input("¿Desea realizar una operación de retiro? (s/n): ")
+
 # ------------------------------------------------------------------------------
-# 3. CICLO ITERATIVO WHILE (Estructura requerida)
+# 3. CICLO ITERATIVO WHILE
 # ------------------------------------------------------------------------------
-# El ciclo continúa mientras el usuario escriba "s" y exista saldo disponible (>= ₡5 000)
 while continuar.lower() == OPCION_CONTINUAR and saldo >= RETIRO_MINIMO:
     
-    # Lectura del monto a retirar en cada operación
-    monto = float(input("\nIngrese el monto a retirar: ₡"))
+    # Lectura del monto recordando los límites al usuario
+    monto = float(input(f"\nIngrese el monto a retirar: (Mínimo ₡{RETIRO_MINIMO:,.0f} | Máximo ₡{RETIRO_MAXIMO:,.0f}): ₡"))
 
     # Rombo 1: Validación de Límites (₡5 000 a ₡100 000)
     if monto >= RETIRO_MINIMO and monto <= RETIRO_MAXIMO:
@@ -45,7 +54,7 @@ while continuar.lower() == OPCION_CONTINUAR and saldo >= RETIRO_MINIMO:
             
     else:
         # Mensaje cuando el monto no cumple con el rango mínimo/máximo
-        print("Estado: Retiro NO realizado (Error: El monto debe estar entre ₡5 000 y ₡100 000).")
+        print(f"Estado: Retiro NO realizado (Error: El monto debe estar entre ₡{RETIRO_MINIMO:,.0f} y ₡{RETIRO_MAXIMO:,.0f}).")
 
     # Muestra del saldo actualizado por cada intento
     print("Saldo actualizado: ₡", saldo)
@@ -54,7 +63,7 @@ while continuar.lower() == OPCION_CONTINUAR and saldo >= RETIRO_MINIMO:
     if saldo >= RETIRO_MINIMO:
         continuar = input("¿Desea realizar otro retiro? (s/n): ")
     else:
-        print("\nSaldo insuficiente para realizar más retiros (mínimo ₡5 000).")
+        print(f"\nSaldo insuficiente para realizar más retiros (mínimo ₡{RETIRO_MINIMO:,.0f}).")
         continuar = "n"
 
 # ------------------------------------------------------------------------------
