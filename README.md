@@ -27,4 +27,4 @@ El programa simula el funcionamiento de un cajero automático en consola utiliza
 
 * `main.py` - Código fuente ejecutable en Python.
 * `README.md` - Documentación del proyecto e instrucciones de uso.
-* `diagrama_flujo.drawio` - Diagrama de flujo editable para draw.io.
+* `Documentación` - Documentación del proyecto en PDF.
