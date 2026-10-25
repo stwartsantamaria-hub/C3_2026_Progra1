@@ -14,17 +14,24 @@ RETIRO_MAXIMO = 100000.0   # Retiro máximo por operación
 OPCION_CONTINUAR = "s"     # Opción afirmativa para continuar
 
 # ------------------------------------------------------------------------------
-# 2. INICIALIZACIÓN DE VARIABLES
+# 2. INICIALIZACIÓN DE VARIABLES Y MUESTREO INICIAL
 # ------------------------------------------------------------------------------
 saldo = SALDO_INICIAL
 retiros_exitosos = 0
-continuar = "s"
 monto = 0.0
 
+# Muestra del saldo disponible inicial
+print("==========================================")
+print("       BIENVENIDO AL CAJERO AUTOMÁTICO    ")
+print("==========================================")
+print("Saldo disponible inicial: ₡", saldo)
+
+# Pregunta inicial para evaluar el ingreso al ciclo (Permite 0 iteraciones)
+continuar = input("¿Desea realizar una operación de retiro? (s/n): ")
+
 # ------------------------------------------------------------------------------
-# 3. CICLO ITERATIVO WHILE (Estructura requerida)
+# 3. CICLO ITERATIVO WHILE
 # ------------------------------------------------------------------------------
-# El ciclo continúa mientras el usuario escriba "s" y exista saldo disponible (>= ₡5 000)
 while continuar.lower() == OPCION_CONTINUAR and saldo >= RETIRO_MINIMO:
     
     # Lectura del monto a retirar en cada operación
