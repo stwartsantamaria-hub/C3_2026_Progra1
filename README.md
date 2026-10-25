@@ -25,6 +25,9 @@ El programa simula el funcionamiento de un cajero automático en consola utiliza
 
 ## 📁 Estructura del Repositorio
 
-* `main.py` - Código fuente ejecutable en Python.
-* `README.md` - Documentación del proyecto e instrucciones de uso.
-* `Documentación` - Documentación del proyecto en PDF.
+* 
+
+Tarea_2
+├── Ejercicio1_Cajero_Ciclos  # Código fuente ejecutable en Python
+├── README.md                 # Documentación principal del proyecto
+└── Documentación             # Documendacion completa del proyecto PDF
